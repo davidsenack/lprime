@@ -5,7 +5,8 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami           = "ami-0a49b025fffbbdac6"
   instance_type = "m5zn.large"
-  vpc_security_group_ids = [aws_security_group.instance_sg.id]
+  vpc_security_group_ids = [aws_security_group.lprime_sg.id]
+  key_name               = var.instance_key_name
 
   root_block_device {
     volume_type = "gp2"
