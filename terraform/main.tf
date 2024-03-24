@@ -37,4 +37,7 @@ resource "aws_security_group" "lprime_sg" {
   }
 }
 
-
+output "ssh_command" {
+  value = "ssh -i ${var.instance_key_name}.pem ec2-user@${aws_instance.example.public_ip}"
+  description = "Command to SSH into the EC2 instance"
+}
