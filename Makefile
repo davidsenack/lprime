@@ -1,5 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -Ofast -lgmp
+DIR=build-output
 
 all: lprime
 
