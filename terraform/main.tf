@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "us-east-1"
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-0a49b025fffbbdac6"
+  ami           = "ami-080e1f13689e07408"
   instance_type = "m5zn.large"
   vpc_security_group_ids = [aws_security_group.lprime_sg.id]
   key_name               = var.instance_key_name
