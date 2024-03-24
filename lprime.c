@@ -9,6 +9,14 @@ void generateMersennePrime(int n, mpz_t *result) {
     mpz_sub_ui(*result, *result, 1); // 2^n - 1
 }
 
+void printHelpMenu() {
+    printf("Usage: lprime [OPTIONS]\n");
+    printf("Options:\n");
+    printf("  -n, --number <value>    Specify the exponent n for 2^n - 1 Mersenne number\n");
+    printf("  -k, --rounds <value>    Specify the number of rounds for primality testing (default: 1)\n");
+    printf("  -h, --help              Display this help menu\n");
+}
+
 int main(int argc, char *argv[]) {
     int n = 0, k = 1; // Default values
     for (int i = 1; i < argc; i++) {
@@ -26,11 +34,15 @@ int main(int argc, char *argv[]) {
                 fprintf(stderr, "Option -k/--rounds requires an argument.\n");
                 return 1;
             }
+        } else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
+            printHelpMenu();
+            return 0;
         }
     }
 
     if (n == 0) {
         fprintf(stderr, "The value of n was not provided.\n");
+        printHelpMenu();
         return 1;
     }
 
