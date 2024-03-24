@@ -51,9 +51,9 @@ int main(int argc, char *argv[]) {
 
     int result = mpz_probab_prime_p(mersennePrime, k);
     if (result == 2 || result == 1) {
-        printf("The Mersenne number is probably prime.\n");
+        printf("The Mersenne number 2^%d - 1 is probably prime.\n", n);
     } else {
-        printf("The Mersenne number is composite.\n");
+        printf("The Mersenne number 2^%d - 1 is composite.\n", n);
     }
 
     mpz_clear(mersennePrime);
