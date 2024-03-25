@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # This script is used to generate a list of k-candidates
-# between 100 and 105 million digits in length
+# between 100 and 101 million digits in length
 # This script is memory intensive using around 32GB of RAM
 
 import math
@@ -27,8 +27,8 @@ def main():
     selected_primes = []
     for prime in primes:
         prime_len = get_n_len(prime)
-        # Get primes between 100 and 105 million digits in length
-        if 100000000 <= prime_len <= 105000000:
+        # Get primes between 100 and 101 million digits in length
+        if 100000000 <= prime_len <= 101000000:
             selected_primes.append(prime)
     with open('kcandidates.csv', 'w') as file:
         for prime in selected_primes:
