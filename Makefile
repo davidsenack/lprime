@@ -1,10 +1,11 @@
 CC=gcc
 CFLAGS=-Wall -Ofast -mavx512f -lgmp
-DIR=build-output
+SOURCE_DIR=./src
+DEST_DIR=/usr/local/bin
 
 all: lprime
 
-test-build: ./src/lprime.c
+test-build: 
 	mkdir -p build-output
 	$(CC) ./src/lprime.c -o build-output/lprime $(CFLAGS)
 
@@ -13,6 +14,7 @@ lprime: lprime.c
 
 clean:
 	rm -f lprime
+	rm -f $(DEST_DIR)/lprime
 
 install:
-	$(CC) ./src/lprime.c -o /usr/local/bin/lprime $(CFLAGS)
+	$(CC) $(SOURCE_DIR)/lprime.c -o $(DEST_DIR)/lprime $(CFLAGS)
