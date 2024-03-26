@@ -13,3 +13,6 @@ lprime: lprime.c
 
 clean:
 	rm -f lprime
+
+install:
+	$(CC) ./src/lprime.c -o /usr/local/bin/lprime $(CFLAGS)
