@@ -18,3 +18,6 @@ clean:
 
 install:
 	$(CC) $(SOURCE_DIR)/lprime.c -o $(DEST_DIR)/lprime $(CFLAGS)
+
+test:
+	echo "TODO:: WRITE TESTS"
