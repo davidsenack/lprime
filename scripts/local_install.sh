@@ -11,9 +11,6 @@ cd lprime
 make test
 sudo make install
 
-# Change the run script to be executable
-chmod 700 run.sh 
-
 # Run Lprime against the first candidate
 # and send result to results.txt
 { time lprime -n $(head -n 1) } 2>&1 | tee results.txt
