@@ -15,5 +15,5 @@ sudo make install
 chmod 700 run.sh 
 
 # Run Lprime against the first candidate
-./run.sh $(head -n 1)
-
+# and send result to results.txt
+{ time lprime -n $(head -n 1) } 2>&1 | tee results.txt
