@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_instance" "example" {
   ami           = "ami-080e1f13689e07408"
-  instance_type = "m5zn.2xlarge"
+  instance_type = "r6a.xlarge"
   vpc_security_group_ids = [aws_security_group.lprime_sg.id]
   key_name               = var.instance_key_name
 
