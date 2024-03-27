@@ -13,4 +13,4 @@ sudo make install
 
 # Run Lprime against the first candidate
 # and send result to results.txt
-{ time lprime -n $(head -n 1) } 2>&1 | tee results.txt
+{ time -v lprime -n $(head -n 1) } 2>&1 | tee results.txt
