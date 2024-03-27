@@ -21,3 +21,7 @@ install:
 
 test:
 	echo "TODO:: WRITE TESTS"
+
+profile:
+	mkdir -p ./build-output
+	$(CC) $(SOURCE_DIR)/lprime.c -o ./build-output/lprime_prof $(CFLAGS)
